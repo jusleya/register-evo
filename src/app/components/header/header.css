@@ -1,17 +1,18 @@
 .header {
   height: 60px;
   display: flex;
-  padding: 8px 0;
+  padding: 0 24px;
   align-items: center;
   background-color: #5e35b1;
   justify-content: space-between;
 }
 
-.header__logo {
+.logo {
   height: 30px;
 }
 
-.header__title {
+.title {
+  color: white;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 200;
 }
