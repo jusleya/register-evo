@@ -1,0 +1,28 @@
+.information {
+  display: flex;
+  max-width: 688px;
+  margin: 48px auto;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
+}
+
+.title {
+  font-size: 72px;
+  font-weight: lighter;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cecece;
+}
+
+.label {
+  margin: 0;
+  font-size: 16px;
+}
+
+.value {
+  margin: 0 0 16px;
+  font-size: 22px;
+  font-weight: bold;
+}

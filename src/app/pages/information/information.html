@@ -1,0 +1,13 @@
+<app-header />
+
+@if (user) {
+<main class="information">
+  <h1 class="title">Informações</h1>
+
+  <p class="label">Nome</p>
+  <p class="value">{{ user.name }}</p>
+
+  <p class="label">E-mail</p>
+  <p class="value">{{ user.email }}</p>
+</main>
+}
