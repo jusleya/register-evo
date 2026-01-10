@@ -19,7 +19,11 @@ export class RegisterComponent {
   error = '';
   password = '';
 
-  getError(control: NgModel | null, form: NgForm, fieldLabel: string): string | null {
+  getError(
+    control: Pick<NgModel, 'errors' | 'touched'>,
+    form: Pick<NgForm, 'submitted'>,
+    fieldLabel: string
+  ): string | null {
     if (!control || !control.errors) {
       return null;
     }
