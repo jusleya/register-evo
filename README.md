@@ -1,59 +1,110 @@
 # RegisterEvo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+## Solution
 
-## Development server
+This project was developed as part of the **Front-end technical challenge for ABC Fitness**.
 
-To start a local development server, run:
+The goal of the challenge was to build a **user registration application**, focusing on form validation, data persistence, and navigation between pages, using Angular as the main framework.
 
-```bash
-ng serve
-```
+The application is a **client-side Angular app**, where users can:
+- Fill out a registration form
+- Validate required fields and email format
+- Persist user data using `localStorage`
+- View the saved user information on a separate page after submission
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Requirements Covered
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The project fulfills all the required points from the challenge:
 
-```bash
-ng generate component component-name
-```
+- ✅ Application structured using **Angular (version 2+)**
+- ✅ HTML structure created for all pages
+- ✅ External CSS files used (no inline styles)
+- ✅ Email validation implemented using JavaScript / Angular forms
+- ✅ Data persistence using **localStorage**
+- ✅ Navigation to a new page displaying stored user data after saving
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Technologies Used
 
-```bash
-ng generate --help
-```
+- **Angular** (standalone components)
+- **TypeScript**
+- **HTML5**
+- **CSS3**
+- **Angular Router**
+- **Vitest** for unit testing
 
-## Building
+## Running the Project
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Install dependencies
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Run application
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Run tests
 
-## Additional Resources
+```bash
+npm test
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Project Structure
+
+The project is organized as follows:
+
+```
+src
+├── app
+│ ├── components
+│ │ └── header
+│ ├── pages
+│ │ ├── register
+│ │ └── information
+│ ├── services
+│ │ └── localStorage.service.ts
+│ └── app.routes.ts
+├── assets
+│ └── img
+```
+
+### Folder Description
+
+- **components/header**  
+  Reusable header component used across pages.
+
+- **pages/register**  
+  User registration page containing:
+  - Form fields (name, email, password)
+  - Validation logic
+  - Submit handling
+
+- **pages/information**  
+  Page responsible for displaying the user data stored in `localStorage`.
+
+- **services**  
+  Contains the `StorageService`, responsible for handling `localStorage` operations.
+
+- **assets**  
+  Static assets such as global styles and other resources.
+
+---
+
+## Application Flow
+
+1. User fills out the registration form.
+2. Form validation ensures:
+   - Required fields are filled
+   - Email follows a valid pattern
+   - Password has a minimum length
+3. On successful submission:
+   - User data is saved to `localStorage`
+   - The application navigates to the information page
+4. The information page reads data from `localStorage` and displays it.
+5. The user can return to the registration page, clearing stored data.
