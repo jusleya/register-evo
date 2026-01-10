@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { StorageService } from '../../services/localStorage.service';
 import { HeaderComponent } from '../../components/header/header';
 import { Router } from '@angular/router';
@@ -8,19 +7,19 @@ import { Router } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-register',
-  imports: [CommonModule, FormsModule, HeaderComponent],
+  imports: [FormsModule, HeaderComponent],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
 export class RegisterComponent {
+  private storage = inject(StorageService);
+  private router = inject(Router);
   name = '';
   email = '';
   error = '';
   password = '';
 
-  constructor(private storage: StorageService, private router: Router) {}
-
-  getError(control: any, form: any, fieldLabel: string): string | null {
+  getError(control: NgModel | null, form: NgForm, fieldLabel: string): string | null {
     if (!control || !control.errors) {
       return null;
     }
@@ -41,26 +40,17 @@ export class RegisterComponent {
     return null;
   }
 
-  isValidEmail(email: string): boolean {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  }
-
-  submit(form: any): void {
+  submit(form: NgForm): void {
     if (form.invalid) {
       return;
     }
 
-    if (!this.isValidEmail(this.email)) {
-      this.error = 'E-mail inválido';
-      return;
-    }
     this.storage.save('user', {
       name: this.name,
       email: this.email,
       password: this.password,
     });
 
-    // this.router.navigate(['/informacao']);
+    this.router.navigate(['/informacoes']);
   }
 }
