@@ -4,9 +4,10 @@
   <h1 class="title">Cadastro</h1>
   <form class="form" (ngSubmit)="submit(form)" #form="ngForm">
     <div class="form-group">
-      <label class="form-label" for="">Nome:</label>
+      <label class="form-label" for="name">Nome:</label>
       <input
         type="text"
+        id="name"
         name="name"
         [(ngModel)]="name"
         #nameCtrl="ngModel"
@@ -22,9 +23,10 @@
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="">E-mail:</label>
+      <label class="form-label" for="email">E-mail:</label>
       <input
         type="text"
+        id="email"
         name="email"
         [(ngModel)]="email"
         pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
@@ -41,9 +43,10 @@
     </div>
 
     <div class="form-group">
-      <label class="form-label" for="">Senha:</label>
+      <label class="form-label" for="password">Senha:</label>
       <input
         type="password"
+        id="password"
         name="password"
         [(ngModel)]="password"
         #passwordCtrl="ngModel"
