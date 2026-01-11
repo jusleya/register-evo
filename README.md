@@ -107,7 +107,7 @@ src
 4. The information page reads data from `localStorage` and displays it.
 5. The user can return to the registration page, clearing stored data.
 
-## Application Flow
+## Additional Improvements
 Although not explicitly required in the challenge scope, some additional improvements were implemented to ensure better code quality, usability, and user experience:
 
 - Unit tests were added to validate the main application flows, including form submission, data persistence, and navigation behavior.
