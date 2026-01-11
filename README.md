@@ -94,8 +94,6 @@ src
 - **assets**  
   Static assets such as global styles and other resources.
 
----
-
 ## Application Flow
 
 1. User fills out the registration form.
@@ -108,3 +106,10 @@ src
    - The application navigates to the information page
 4. The information page reads data from `localStorage` and displays it.
 5. The user can return to the registration page, clearing stored data.
+
+## Application Flow
+Although not explicitly required in the challenge scope, some additional improvements were implemented to ensure better code quality, usability, and user experience:
+
+- Unit tests were added to validate the main application flows, including form submission, data persistence, and navigation behavior.
+- Accessibility best practices were considered, such as the correct use of semantic HTML elements, proper association between labels and inputs, and meaningful alt attributes for images.
+- A complete navigation flow was implemented by adding a “Back” button on the information page, which clears the `localStorage` data and allows the user to restart the registration process from the beginning.
